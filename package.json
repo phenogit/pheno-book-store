@@ -4,7 +4,7 @@
   "description": "這是我個人書店商城的 code",
   "scripts": {
     "dev": "next dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
     "next": "^12.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "cypress": "^9.0.0"
   }
 }
