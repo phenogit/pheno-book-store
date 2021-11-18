@@ -11,3 +11,15 @@ describe("第一個測試", () => {
     cy.contains("Hello World");
   });
 });
+
+describe("Head 元素測試", () => {
+  it("應該要有對的 viewport 元素", () => {
+    cy.visit("http://localhost:3000");
+    cy.document();
+    cy.get("head meta[name='viewport']").should(
+      "have.attr",
+      "content",
+      "initial-scale=1, width=device-width"
+    );
+  });
+});
