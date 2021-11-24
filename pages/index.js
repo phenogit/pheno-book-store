@@ -25,7 +25,9 @@ export default function IndexPage() {
 
       {session && (
         <>
+          <strong>{session.user.email || session.user.name}</strong>
           <span>已登入</span>
+          <button onClick={() => signOut()}>登出</button>
         </>
       )}
     </>
