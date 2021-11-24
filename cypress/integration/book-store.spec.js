@@ -19,6 +19,6 @@ describe("首頁測試", () => {
     );
   });
   it("應該要有個 App Bar", () => {
-    cy.react("AppBarWithMenu").should("have.length", "1");
+    cy.react("AppBarWithMenu").should("to.exist");
   });
 });
