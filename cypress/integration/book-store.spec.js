@@ -5,11 +5,12 @@
 // check out the link below and learn how to write your first test:
 // https://on.cypress.io/writing-first-test
 
-import { exists } from "fs";
-
-describe("Head 元素測試", () => {
-  it("應該要有對的 viewport 元素", () => {
+describe("首頁測試", () => {
+  before(() => {
     cy.visit("/");
+    cy.waitForReact();
+  });
+  it("head 元素內應該要有對的 viewport 屬性", () => {
     cy.document();
     cy.get("head meta[name='viewport']").should(
       "have.attr",
@@ -17,12 +18,7 @@ describe("Head 元素測試", () => {
       "initial-scale=1, width=device-width"
     );
   });
-});
-
-describe("首頁測試", () => {
   it("應該要有個 App Bar", () => {
-    cy.visit("/");
-    cy.waitForReact();
     cy.react("AppBarWithMenu").should("have.length", "1");
   });
 });
