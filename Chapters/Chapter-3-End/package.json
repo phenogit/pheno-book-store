@@ -1,0 +1,38 @@
+{
+  "name": "pheno-book-store",
+  "version": "1.0.0",
+  "description": "這是我個人書店商城的 code",
+  "scripts": {
+    "dev": "next dev",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phenogit/pheno-book-store.git"
+  },
+  "keywords": [
+    "bookstore",
+    "nextjs",
+    "full-stack"
+  ],
+  "author": "Pheno Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phenogit/pheno-book-store/issues"
+  },
+  "homepage": "https://github.com/phenogit/pheno-book-store#readme",
+  "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.1.1",
+    "@mui/material": "^5.1.1",
+    "next": "^12.0.4",
+    "next-auth": "^3.29.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "cypress": "^9.0.0",
+    "cypress-react-selector": "^2.3.13"
+  }
+}
