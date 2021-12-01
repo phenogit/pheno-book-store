@@ -14,20 +14,18 @@ export default function IndexPage() {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      <AppBarWithMenu />
+      <AppBarWithMenu session={session} />
 
       {!session && (
         <>
           <span>未登入</span>
-          <button onClick={() => signIn()}>登入</button>
         </>
       )}
 
       {session && (
         <>
-          <strong>{session.user.email || session.user.name}</strong>
+          <strong>{session.user.name || session.user.email}</strong>
           <span>已登入</span>
-          <button onClick={() => signOut()}>登出</button>
         </>
       )}
     </>

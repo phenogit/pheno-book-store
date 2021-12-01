@@ -1,9 +1,11 @@
 import React from "react";
 import { Box, AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import AccountCircle from "@mui/icons-material/AccountCircle";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { signIn, signOut } from "next-auth/client";
 
-export default function AppBarWithMenu() {
+export default function AppBarWithMenu({ session }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -20,7 +22,7 @@ export default function AppBarWithMenu() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Pheno 書店
           </Typography>
-          <div>
+          <>
             <IconButton
               size="large"
               aria-label="登入的使用者"
@@ -28,9 +30,10 @@ export default function AppBarWithMenu() {
               aria-haspopup="true"
               color="inherit"
             >
-              <AccountCircle />
+              {!session && <LoginIcon data-cy onClick={() => signIn()} />}
+              {session && <LogoutIcon onClick={() => signOut()} />}
             </IconButton>
-          </div>
+          </>
         </Toolbar>
       </AppBar>
     </Box>

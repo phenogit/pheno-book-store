@@ -21,4 +21,8 @@ describe("首頁測試", () => {
   it("應該要有個 App Bar", () => {
     cy.react("AppBarWithMenu").should("to.exist");
   });
+  it("App Bar 在沒有 session 的時候應該有登出鈕", () => {
+    cy.getReact("AppBarWithMenu").getProps("session").should("eq", null);
+    cy.react("AppBarWithMenu").react("LoginIcon").should("to.exist");
+  });
 });
