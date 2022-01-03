@@ -6,6 +6,10 @@ import AppBarWithMenu from "../../components/AppBarWithMenu";
 
 export default function Book() {
   const [session] = useSession();
+  const router = useRouter();
+
+  const { title } = router.query;
+
   return (
     <>
       <Head>
@@ -13,7 +17,7 @@ export default function Book() {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <AppBarWithMenu session={session} />
-      書本介紹
+      {title}介紹
     </>
   );
 }
